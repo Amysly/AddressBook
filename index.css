@@ -1,0 +1,51 @@
+.contact-info,
+.address-contact{
+  display: grid;
+  grid-template-columns:200px 200px 200px 200px ;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+} 
+
+.address-contact{
+  margin-bottom: 10px;
+  
+}
+.address-book{
+  background-color:yellowgreen;
+  margin: auto;
+  align-content: center;
+  width: 750px;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 100px;
+  box-shadow: 0px 5px 5px 2px rgb(184, 178, 178);
+}
+
+.delete-contact{
+  background-color: rgb(233, 35, 35);
+  color: #fff;
+  border: none;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 17px;
+  width: 50%;
+}
+
+#add{
+color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 17px;
+  width: 50%; 
+  background-color: black; 
+}
+
+input{
+  padding: 10px;
+  border: none;
+ 
+}
