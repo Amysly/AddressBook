@@ -1,13 +1,22 @@
-.contact-info,
-.address-contact{
+body{
+  background-image: url(bgpic.jpg);
+  background-size: cover;
+  background-position: center;
+}
+/* Base styles for larger screens */
+.contact-div,
+.address-contact {
   display: grid;
-  grid-template-columns:200px 200px 200px 200px ;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   column-gap: 10px;
   row-gap: 10px;
   align-items: center;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
-} 
+}
+
+
+
 
 .address-contact{
   margin-bottom: 10px;
@@ -15,13 +24,12 @@
 }
 .address-book{
   background-color:yellowgreen;
-  margin: auto;
   align-content: center;
-  width: 750px;
   padding: 25px;
+  width: 80%;
   border-radius: 10px;
   margin-top: 100px;
-  box-shadow: 0px 5px 5px 2px rgb(184, 178, 178);
+  box-shadow: 0px 5px 5px 2px rgb(58, 55, 55);
 }
 
 .delete-contact{
@@ -31,7 +39,7 @@
   padding: 7px;
   border-radius: 10px;
   font-size: 17px;
-  width: 50%;
+  margin-bottom: 10px;
 }
 
 #add{
@@ -40,12 +48,18 @@ color: #fff;
   padding: 10px;
   border-radius: 10px;
   font-size: 17px;
-  width: 50%; 
   background-color: black; 
 }
 
 input{
-  padding: 10px;
+  padding: 15px;
   border: none;
- 
+  border-radius: 3px;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+input::placeholder{
+  font-size: 18px;
+  font-family: sans-serif;
 }

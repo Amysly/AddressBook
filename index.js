@@ -9,18 +9,33 @@ addItem.addEventListener('click', function (){
     let emailInput = email.value;
     let phoneInput = phone.value;
 
+    if(nameInput === ''){
+        displayError('Name field is required');
+        return;
+    } 
+    if(emailInput === ''){
+        displayError('Email field is required');
+        return;
+    } 
+    if(phoneInput === ''){
+        displayError('Phone number field is required');
+        return;
+    } 
+    if(phoneInput.length > 11){
+        displayError('Phone number is greater than 11 digits');
+        return;
+    } 
     if(phoneInput.length < 11){
         displayError('Phone number is less than 11 digits');
         return;
-    } else if(phoneInput.length > 11){
-        displayError('Phone number greater than 11 digits');
-        return;
-    } else if(isNaN(phoneInput)){
-        displayError('Not a number');
+    } 
+    if(isNaN(phoneInput)){
+        displayError('Phone number must be a number');
         return;
     }
 
-    let phoneNum = Number(phoneInput);
+
+    let phoneNum = phoneInput;
 
     addressBook.push({
         name: nameInput,
@@ -53,6 +68,7 @@ function displayAddress(){
         let phoneNum = addressInfo.phoneNum;
 
         const html = `
+            <div class="contact-div">
             <div>${name}</div>
             <div>${email}</div>
             <div>${phoneNum}</div>
@@ -60,6 +76,7 @@ function displayAddress(){
             addressBook.splice(${i}, 1);
             displayAddress();
           " class="delete-contact">Delete</button> 
+            </div>
             `;
 
         addressContact += html;
@@ -82,12 +99,12 @@ const searchContact = document.getElementById('search-contact');
 
 searchContact.addEventListener('keyup', function (e){
     const searchText = e.target.value.toLowerCase();
-    const contactLists = document.querySelectorAll('.contact-info div');
+    const contactLists = document.querySelectorAll('.contact-div');
 
     contactLists.forEach(function (contactList) {
         const contactAddress = contactList.textContent.toLowerCase();
         if (contactAddress.includes(searchText)) {
-            contactList.style.display = 'block';
+            contactList.style.display = 'grid';
         } else {
             contactList.style.display = 'none';
         }
